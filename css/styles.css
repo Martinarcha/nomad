@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*NAVBAR*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cart-button,
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.menu-button {
+    color: white;
+}
+
+.app-logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* BODY */
+
+body {
+    background-color: #111111;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*INDEX'S HERO*/
+
+.hero {
+    min-height: calc(100vh - 66px);
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/*INDEX HERO'S BUTTON */
+
+.hero-cta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 20%;
+}
