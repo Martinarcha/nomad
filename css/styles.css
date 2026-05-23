@@ -65,6 +65,7 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
 }
+
 .hero video {
     position: absolute;
     width: 100%;
@@ -76,6 +77,21 @@ body {
     position: relative;
     z-index: 1;
 }
+
+.hero-text {
+    position: absolute;
+    bottom: 20vh;
+    left: 2rem;
+    right: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.hero-text h2 {
+    font-size: 4rem;
+    letter-spacing: 0.08rem;
+    font-weight: 500;
+}
+
 /*INDEX HERO'S BUTTON */
 
 .hero-cta {
@@ -105,4 +121,92 @@ body {
     font-weight: 300;
     opacity: 0.7;
     letter-spacing: 0.05rem;
+}
+
+/* CARDS INDEX */
+
+.experience-card {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.experience-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 600ms ease;
+}
+
+.experience-card:hover img {
+    transform: scale(1.05);
+}
+
+.experience-card:hover .experience-content {
+    transform: translateY(-10px);
+}
+
+.experience-card:hover .experience-overlay {
+    opacity: 0.8;
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem;
+}
+
+.experience-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.1),
+            transparent);
+    transition: opacity 700ms ease;
+}
+
+.experience-content {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    gap: 1rem;
+    transition: transform 700ms ease;
+}
+
+.experience-content h2 {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+@media (max-width: 900px) {
+    .experiences-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .experience-card {
+        height: 60vh;
+    }
+
+    .experience-content h2 {
+        font-size: 2.5rem;
+    }
+
+
 }
