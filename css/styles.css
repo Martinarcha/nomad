@@ -92,6 +92,11 @@ body {
     font-weight: 500;
 }
 
+.hero-text p {
+    opacity: 0.7;
+    letter-spacing: 0.05rem;
+}
+
 /*INDEX HERO'S BUTTON */
 
 .hero-cta {
@@ -191,7 +196,57 @@ body {
     font-weight: 500;
 }
 
+
+/* PHILOSOPHY INDEX */
+
+.philosophy-section {
+    display: flex;
+    padding: 4rem 0rem 4rem 2rem;
+    align-items: center;
+}
+
+.philosophy-content {
+    flex: 2;
+    max-width: 600px;
+}
+
+.philosophy-content h2 {
+    line-height: 2.5rem;
+    margin-bottom: 2rem;
+
+}
+
+.philosophy-image {
+    flex: 1;
+}
+
+.philosophy-image img {
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+}
+
 @media (max-width: 900px) {
+
+    /*HERO SECTION*/
+    .hero-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+        letter-spacing: 0.02rem;
+    }
+
+    .cta-arrow {
+        font-size: 1.2rem;
+    }
+
+    /*CARDS SECTION*/
     .experiences-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
