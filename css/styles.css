@@ -20,12 +20,16 @@ nav {
     gap: 1rem;
 }
 
+.cart-icon {
+    width: 24px;
+    height: 20px;
+}
+
 .cart-button,
 .menu-button {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
     color: #f5f5f5;
 }
 
@@ -42,7 +46,9 @@ nav {
 body {
     background-color: #111111;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Manrope", sans-serif;
+
+
 }
 
 /*INDEX'S HERO*/
@@ -205,23 +211,35 @@ body {
     gap: 2rem;
 
     background-image:
-        linear-gradient(to right,
-            rgba(0, 0, 0, 0.95) 15%,
-            rgba(0, 0, 0, 0.75) 40%,
-            rgba(0, 0, 0, 0.2) 65%,
-            rgba(0, 0, 0, 0.4) 100%),
         url(../assets/images/philosophy_section.png);
 
     background-size: cover;
     background-position: center;
 
     min-height: 40vh;
+
+    position: relative;
+
+}
+
+.philosophy-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 0.95) 15%,
+            rgba(0, 0, 0, 0.75) 40%,
+            rgba(0, 0, 0, 0.2) 65%,
+            rgba(0, 0, 0, 0.4) 100%);
+
 }
 
 .philosophy-content {
     max-width: 600px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -253,6 +271,7 @@ body {
     display: flex;
     gap: 0.7rem;
     transition: opacity 0.3s ease;
+    width: 10rem;
 }
 
 .philosophy-cta:hover {
@@ -467,6 +486,158 @@ footer {
 .footer-copyright {
     opacity: 60%;
     font-size: 0.7rem;
+}
+
+
+/*-----------------------------EXPERIENCES PAGE-----------------------------*/
+
+.experiences-intro {
+    height: 60vh;
+    padding: 4rem;
+}
+
+.experiences-intro__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    height: 100%;
+}
+
+.experiences-intro__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-left: 7rem;
+}
+
+.experiences-intro__title {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+}
+
+.experiences-intro__description {
+    margin-left: 6rem;
+    max-width: 200px;
+}
+
+.category-hero {
+    height: 70vh;
+    position: relative;
+}
+
+.category-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+            transparent,
+            rgba(0, 0, 0, 0.1) 40%,
+            rgba(0, 0, 0, 0.35) 70%,
+            rgba(0, 0, 0, 0.65) 100%);
+    z-index: 1;
+}
+
+.category-hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-hero__title {
+    position: absolute;
+    bottom: 2rem;
+    right: 4rem;
+    font-size: 6rem;
+    z-index: 2;
+}
+
+.category-intro {
+    max-width: 40rem;
+    margin-top: 8rem;
+    margin-left: 12rem;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category-intro__text {
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.category-showcase {
+    max-width: 1400px;
+    margin: 6rem auto 8rem;
+
+
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    gap: 2rem;
+}
+
+.featured-experience {
+    height: 60vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+
+.featured-experience__content {
+    background-color: #171717;
+    padding: 2rem 2.5rem;
+}
+
+.featured-experience__location {
+    font-size: 0.85rem;
+    letter-spacing: 0.15rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.featured-experience__title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.featured-experience__image {
+    background-color: #171717;
+
+}
+
+.secondary-experiences {
+    height: 60vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+.secondary-experience {
+    background-color: #171717;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.secondary-experience__content {
+    padding: 1rem 1.5rem;
+}
+
+.secondary-experience__location {
+    font-size: 0.75rem;
+    letter-spacing: 0.12rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.secondary-experience__title {
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 @media (max-width: 900px) {
