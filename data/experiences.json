@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "category": "mountains",
+        "location": "Patagonia",
+        "title": "Glacier Expedition",
+        "image": "assets/images/experiences/mountains-category-showcase/glacier-expedition.jpg",
+        "difficulty": "Advanced",
+        "duration": 7,
+        "price": 3200
+    },
+    {
+        "id": 2,
+        "category": "mountains",
+        "location": "Patagonia",
+        "title": "Ice Trek",
+        "image": "assets/images/experiences/mountains-category-showcase/ice-trek.jpg",
+        "difficulty": "Intermediate",
+        "duration": 4,
+        "price": 1800
+    },
+    {
+        "id": 3,
+        "category": "mountains",
+        "location": "Andes",
+        "title": "Mountain Traverse",
+        "image": "assets/images/experiences/mountains-category-showcase/mountain-traverse.jpg",
+        "difficulty": "Advanced",
+        "duration": 10,
+        "price": 4500
+    },
+    {
+        "id": 4,
+        "category": "ocean",
+        "location": "Iceland",
+        "title": "Whale Expedition",
+        "image": "assets/images/experiences/ocean-category-showcase/whale-expedition.jpg",
+        "difficulty": "Intermediate",
+        "duration": 5,
+        "price": 2600
+    },
+    {
+        "id": 5,
+        "category": "ocean",
+        "location": "Norway",
+        "title": "Coastal Voyage",
+        "image": "assets/images/experiences/ocean-category-showcase/coastal-voyage.jpg",
+        "difficulty": "Beginner",
+        "duration": 3,
+        "price": 1400
+    },
+    {
+        "id": 6,
+        "category": "ocean",
+        "location": "Maldives",
+        "title": "Island Escape",
+        "image": "assets/images/experiences/ocean-category-showcase/island-escape.jpg",
+        "difficulty": "Beginner",
+        "duration": 7,
+        "price": 3000
+    },
+    {
+        "id": 7,
+        "category": "desert",
+        "location": "Sahara",
+        "title": "Dune Expedition",
+        "image": "assets/images/experiences/desert-category-showcase/dune-expedition.jpg",
+        "difficulty": "Intermediate",
+        "duration": 6,
+        "price": 2500
+    },
+    {
+        "id": 8,
+        "category": "desert",
+        "location": "Canyonlands",
+        "title": "Canyon Crossing",
+        "image": "assets/images/experiences/desert-category-showcase/canyon-crossing.jpg",
+        "difficulty": "Intermediate",
+        "duration": 4,
+        "price": 1900
+    },
+    {
+        "id": 9,
+        "category": "desert",
+        "location": "Arabian Desert",
+        "title": "Caravan Passage",
+        "image": "assets/images/experiences/desert-category-showcase/caravan-passage.jpg",
+        "difficulty": "Advanced",
+        "duration": 8,
+        "price": 3700
+    },
+    {
+        "id": 10,
+        "category": "forest",
+        "location": "Pacific Northwest",
+        "title": "Forest Expedition",
+        "image": "assets/images/experiences/forest-category-showcase/forest-expedition.jpg",
+        "difficulty": "Intermediate",
+        "duration": 5,
+        "price": 2200
+    },
+    {
+        "id": 11,
+        "category": "forest",
+        "location": "Amazon Basin",
+        "title": "Canopy Trail",
+        "image": "assets/images/experiences/forest-category-showcase/canopy-trail.jpg",
+        "difficulty": "Beginner",
+        "duration": 3,
+        "price": 1500
+    },
+    {
+        "id": 12,
+        "category": "forest",
+        "location": "Scandinavian Forests",
+        "title": "Untamed Wilds",
+        "image": "assets/images/experiences/forest-category-showcase/untamed-wilds.jpg",
+        "difficulty": "Beginner",
+        "duration": 2,
+        "price": 900
+    }
+]

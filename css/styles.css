@@ -761,6 +761,78 @@ footer {
         width: 100%;
     }
 
+    /* EXPERIENCES */
+
+    .experiences-intro {
+        padding: 2rem;
+        height: auto;
+    }
+
+    .experiences-intro__content {
+        margin: 4rem 0 4rem 0;
+    }
+
+    .experiences-intro__title {
+        font-size: 2rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .experiences-intro__description {
+        margin-left: 0;
+        font-size: 0.9rem;
+
+    }
+
+    .category-hero {
+        height: 60vh;
+        position: relative;
+    }
+
+    .category-hero__title {
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 3rem;
+    }
+
+    .category-intro {
+        margin: 4rem 2rem 0 4rem;
+    }
+
+    .category-intro__text {
+        font-size: 1rem;
+    }
+
+    .category-showcase {
+        margin: 4rem 2rem;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .featured-experience__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    .featured-experience__location {
+        font-size: 0.7rem;
+        letter-spacing: 0.1rem;
+
+    }
+
+
+
+    .secondary-experience__location {
+        font-size: 0.6rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .secondary-experience__title {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+
     /* FOOTER */
     footer {
         padding-top: 2.5rem;
