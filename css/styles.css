@@ -582,7 +582,7 @@ footer {
     gap: 2rem;
 }
 
-.featured-experience {
+.featured-experience-card {
     height: 60vh;
     display: grid;
     grid-template-rows: 80% 20%;
@@ -665,6 +665,86 @@ footer {
 .category-showcase--reverse .secondary-experiences {
     order: 1;
 }
+
+
+/* MODAL EXPERIENCES */
+
+.experience-modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+
+}
+
+.experience-modal__content {
+    background-color: rgba(70, 70, 70, 0.6);
+
+    overflow: hidden;
+    border-radius: 24px;
+
+    width: 80vw;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    height: 70vh;
+    z-index: 3;
+
+}
+
+.modal-image img {
+    object-fit: cover;
+}
+
+.modal-image,
+.modal-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-details {
+    background-color: #202020;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+.add-to-journey-button {
+    margin-top: auto;
+}
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.modal-info__title {
+    font-size: 4rem;
+    line-height: 0.9;
+}
+
+.modal-meta{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.modal-meta__difficulty, .modal-meta__duration, .modal-meta__price{
+    border: 1px #f5f5f5 solid;
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+
+
 
 @media (max-width: 900px) {
 

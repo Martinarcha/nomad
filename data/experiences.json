@@ -7,7 +7,9 @@
         "image": "assets/images/experiences/mountains-category-showcase/glacier-expedition.jpg",
         "difficulty": "Advanced",
         "duration": 7,
-        "price": 3200
+        "price": 3200,
+        "alt": "Glacial lagoon with floating ice formations and snow-covered mountains in Patagonia",
+        "description": "Cross vast Patagonian glaciers alongside expert guides, discovering remote ice fields, dramatic landscapes and unforgettable alpine scenery."
     },
     {
         "id": 2,
@@ -17,7 +19,9 @@
         "image": "assets/images/experiences/mountains-category-showcase/ice-trek.jpg",
         "difficulty": "Intermediate",
         "duration": 4,
-        "price": 1800
+        "price": 1800,
+        "alt": "Ice trekking group crossing a Patagonian glacier",
+        "description": "Explore ancient glaciers on foot while navigating frozen terrain and experiencing Patagonia's most iconic natural wonders."
     },
     {
         "id": 3,
@@ -27,7 +31,9 @@
         "image": "assets/images/experiences/mountains-category-showcase/mountain-traverse.jpg",
         "difficulty": "Advanced",
         "duration": 10,
-        "price": 4500
+        "price": 4500,
+        "alt": "Climbers crossing an alpine mountain ridge",
+        "description": "A challenging multi-day crossing through high-altitude Andean landscapes designed for experienced adventurers."
     },
     {
         "id": 4,
@@ -37,7 +43,9 @@
         "image": "assets/images/experiences/ocean-category-showcase/whale-expedition.jpg",
         "difficulty": "Intermediate",
         "duration": 5,
-        "price": 2600
+        "price": 2600,
+        "alt": "Humpback whale breaching above the ocean surface",
+        "description": "Navigate Icelandic waters in search of whales while exploring dramatic coastlines and remote northern ecosystems."
     },
     {
         "id": 5,
@@ -47,7 +55,9 @@
         "image": "assets/images/experiences/ocean-category-showcase/coastal-voyage.jpg",
         "difficulty": "Beginner",
         "duration": 3,
-        "price": 1400
+        "price": 1400,
+        "alt": "Boat navigating along a dramatic rocky coastline viewed from above",
+        "description": "Cruise through spectacular Nordic fjords surrounded by towering cliffs, charming villages and pristine waters."
     },
     {
         "id": 6,
@@ -57,7 +67,9 @@
         "image": "assets/images/experiences/ocean-category-showcase/island-escape.jpg",
         "difficulty": "Beginner",
         "duration": 7,
-        "price": 3000
+        "price": 3000,
+        "alt": "Aerial view of a secluded tropical island surrounded by turquoise waters",
+        "description": "Relax on secluded islands while enjoying crystal-clear lagoons, marine life encounters and luxurious surroundings."
     },
     {
         "id": 7,
@@ -67,7 +79,9 @@
         "image": "assets/images/experiences/desert-category-showcase/dune-expedition.jpg",
         "difficulty": "Intermediate",
         "duration": 6,
-        "price": 2500
+        "price": 2500,
+        "alt": "Off-road vehicles traversing towering desert dunes",
+        "description": "Journey across endless dunes, discover remote desert camps and experience the vastness of the Sahara."
     },
     {
         "id": 8,
@@ -77,7 +91,9 @@
         "image": "assets/images/experiences/desert-category-showcase/canyon-crossing.jpg",
         "difficulty": "Intermediate",
         "duration": 4,
-        "price": 1900
+        "price": 1900,
+        "alt": "Travelers exploring a vast desert canyon landscape",
+        "description": "Explore dramatic rock formations and winding canyons shaped by thousands of years of natural erosion."
     },
     {
         "id": 9,
@@ -87,7 +103,9 @@
         "image": "assets/images/experiences/desert-category-showcase/caravan-passage.jpg",
         "difficulty": "Advanced",
         "duration": 8,
-        "price": 3700
+        "price": 3700,
+        "alt": "Camel caravan crossing the desert at sunset",
+        "description": "Follow ancient trade routes through vast desert landscapes and experience traditional nomadic culture."
     },
     {
         "id": 10,
@@ -97,7 +115,9 @@
         "image": "assets/images/experiences/forest-category-showcase/forest-expedition.jpg",
         "difficulty": "Intermediate",
         "duration": 5,
-        "price": 2200
+        "price": 2200,
+        "alt": "Forest road winding through dense tropical vegetation",
+        "description": "Venture deep into old-growth forests filled with towering trees, hidden trails and rich biodiversity."
     },
     {
         "id": 11,
@@ -107,7 +127,9 @@
         "image": "assets/images/experiences/forest-category-showcase/canopy-trail.jpg",
         "difficulty": "Beginner",
         "duration": 3,
-        "price": 1500
+        "price": 1500,
+        "alt": "Traveler gliding above the forest canopy on a zipline",
+        "description": "Discover the rainforest from above while traversing canopy routes and observing unique wildlife."
     },
     {
         "id": 12,
@@ -117,6 +139,8 @@
         "image": "assets/images/experiences/forest-category-showcase/untamed-wilds.jpg",
         "difficulty": "Beginner",
         "duration": 2,
-        "price": 900
+        "price": 900,
+        "alt": "Lone explorer navigating a dark and untamed forest",
+        "description": "Reconnect with nature through immersive walks in remote forests shaped by Nordic wilderness traditions."
     }
 ]
