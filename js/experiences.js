@@ -87,9 +87,8 @@ fetch("./data/experiences.json")
                 const actualExperience = experiences.find(experience => {
                     return experience.id === Number(clickedId);
                 });
-
+                modal.classList.remove("modal-hidden")
                 console.log(actualExperience);
-
             });
         });
 
