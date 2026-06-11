@@ -89,11 +89,57 @@ fetch("./data/experiences.json")
                 });
                 modal.classList.remove("modal-hidden")
                 console.log(actualExperience);
+
+                const modalTitle = document.querySelector(".modal-info__title");
+                const modalLocation = document.querySelector(".modal-info__location");
+                const modalDescription = document.querySelector(".modal-info__description");
+                const modalImage = document.querySelector(".modal-image img");
+                const modalMetaDifficulty = document.querySelector(".modal-meta__difficulty");
+                const modalMetaDuration = document.querySelector(".modal-meta__duration");
+                const modalPrice = document.querySelector(".modal-price");
+
+
+                modalTitle.textContent = actualExperience.title;
+                modalLocation.textContent = actualExperience.location;
+                modalDescription.textContent = actualExperience.description;
+
+                modalImage.src = `${actualExperience.image}`;
+
+                modalImage.alt = `${actualExperience.alt}`;
+
+                modalMetaDifficulty.textContent = actualExperience.difficulty;
+
+                modalMetaDuration.textContent = `${actualExperience.duration} Days`;
+
+                modalPrice.textContent = `$ ${actualExperience.price}`;
+
+
             });
         });
 
         const modal = document.querySelector(".experience-modal");
         const modalContent = document.querySelector(".experience-modal__content");
+
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.classList.add("modal-hidden");
+            }
+        });
+
+        const closeButton = document.querySelector(".modal-close-button");
+
+        closeButton.addEventListener("click", () => {
+            modal.classList.add("modal-hidden");
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") {
+                modal.classList.add("modal-hidden");
+            }
+        });
+
+
+
 
     }
 
