@@ -1,6 +1,17 @@
 
 const showcase = document.querySelectorAll(".category-showcase");
 
+function showSuccessMessage(message) {
+    Toastify({
+        text: message,
+        duration: 3000
+    }).showToast();
+}
+
+function showErrorMessage(message) {
+    console.log(message);
+}
+
 fetch("./data/experiences.json")
     .then(response => response.json())
     .then(experiences => {
@@ -127,11 +138,10 @@ fetch("./data/experiences.json")
         addToJourneyButton.addEventListener("click", () => {
             const exist = journey.some(experience => experience.id === currentExperience.id);
             if (exist) {
-                console.log("Experience already added to the journey.")
+                showErrorMessage("Experience already added to the journey.")
             } else {
                 journey.push(currentExperience);
-                console.log(`Added: ${currentExperience.title}`)
-                console.log(journey);
+                showSuccessMessage(`${currentExperience.title} added`)
             }
         });
 

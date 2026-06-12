@@ -860,6 +860,18 @@ footer {
     display: none;
 }
 
+.toastify {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    font-family: "Manrope", sans-serif;
+
+    box-shadow: none;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
 @media (max-width: 900px) {
 
     /*HERO SECTION*/
@@ -1064,3 +1076,5 @@ footer {
 
 
 }
+
+
