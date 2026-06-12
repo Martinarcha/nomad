@@ -5,16 +5,21 @@ fetch("./data/experiences.json")
     .then(response => response.json())
     .then(experiences => {
 
-        function renderCategory(categoriaActual, contenedor) {
+        const journey = [];
+        let currentExperience;
+
+        const addToJourneyButton = document.querySelector(".add-to-journey-button");
+
+        function renderCategory(actualCategory, container) {
             const categoryExperiences = experiences.filter(experience => {
-                return experience.category === categoriaActual;
+                return experience.category === actualCategory;
             });
 
             const featuredContainer =
-                contenedor.querySelector(".featured-experience");
+                container.querySelector(".featured-experience");
 
             const secondaryContainer =
-                contenedor.querySelector(".secondary-experiences");
+                container.querySelector(".secondary-experiences");
 
             featuredContainer.innerHTML = "";
             secondaryContainer.innerHTML = "";
@@ -27,7 +32,7 @@ fetch("./data/experiences.json")
 
                     <div class="featured-experience-card" data-id="${experience.id}">
                         <div class="featured-experience__image">
-                            <img src="${experience.image}"
+                            <img src="${experience.image}" 
                                 alt="${experience.alt}">
                         </div>
 
@@ -87,8 +92,10 @@ fetch("./data/experiences.json")
                 const actualExperience = experiences.find(experience => {
                     return experience.id === Number(clickedId);
                 });
-                modal.classList.remove("modal-hidden")
-                console.log(actualExperience);
+                currentExperience = actualExperience;
+                modal.classList.remove("modal-hidden");
+
+
 
                 const modalTitle = document.querySelector(".modal-info__title");
                 const modalLocation = document.querySelector(".modal-info__location");
@@ -117,6 +124,17 @@ fetch("./data/experiences.json")
             });
         });
 
+        addToJourneyButton.addEventListener("click", () => {
+            const exist = journey.some(experience => experience.id === currentExperience.id);
+            if (exist) {
+                console.log("Experience already added to the journey.")
+            } else {
+                journey.push(currentExperience);
+                console.log(`Added: ${currentExperience.title}`)
+                console.log(journey);
+            }
+        });
+
         const modal = document.querySelector(".experience-modal");
         const modalContent = document.querySelector(".experience-modal__content");
 
@@ -137,6 +155,8 @@ fetch("./data/experiences.json")
                 modal.classList.add("modal-hidden");
             }
         });
+
+
 
 
 
