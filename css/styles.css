@@ -6,6 +6,10 @@
 
 /*NAVBAR*/
 
+header {
+    position: relative;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -13,6 +17,38 @@ nav {
     padding: 1.5rem 2rem;
     position: relative;
     z-index: 2;
+}
+
+.nav-menu {
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+
+    position: absolute;
+    z-index: 3;
+
+    font-weight: 400;
+    font-size: 1.2rem;
+
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #f5f5f5;
+    opacity: 0.6;
+    transition: all 400ms ease-out;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+}
+
+.nav-menu-hidden {
+    display: none;
 }
 
 .navbar-actions {
@@ -1076,5 +1112,3 @@ footer {
 
 
 }
-
-
