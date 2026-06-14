@@ -1,5 +1,3 @@
-console.log("NOMAD Connected");
-
 const menuButton = document.querySelector(".menu-button");
 const navMenu = document.querySelector(".nav-menu");
 const header = document.querySelector("header")

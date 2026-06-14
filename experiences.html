@@ -24,6 +24,15 @@
         <nav>
             <div class="app-logo"><a href="#">NOMAD</a></div>
             <div class="navbar-actions">
+
+                <button class="journey-button">
+
+                    <span>Journey</span>
+
+                    <span class="journey-counter journey-counter-hidden">0</span>
+
+                </button>
+
                 <button class="menu-button"><i class="menu-icon" data-lucide="menu"></i></button>
             </div>
         </nav>
@@ -43,6 +52,31 @@
         </div>
 
     </header>
+
+    <div class="journey-panel journey-panel-hidden">
+        <div class="journey-panel__header">
+            <div class="journey-panel__info">
+                <div class="journey-panel__title">
+                    Journey
+                </div>
+
+            </div>
+
+            <button class="journey-panel__close">
+                x
+            </button>
+        </div>
+
+        <div class="journey-panel__content">
+            <div class="journey-panel__empty journey-panel__content-hidden">
+                <p>No experiences added yet.</p>
+
+                <p>Start exploring and build your journey.</p>
+            </div>
+
+            <div class="journey-panel__list journey-panel__content-hidden"></div>
+        </div>
+    </div>
 
     <main>
         <section class="experiences-intro">
@@ -272,7 +306,7 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-        <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
     <script src="js/experiences.js"></script>
 

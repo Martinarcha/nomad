@@ -7,7 +7,13 @@
 /*NAVBAR*/
 
 header {
-    position: relative;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+
 }
 
 nav {
@@ -21,15 +27,16 @@ nav {
 
 .nav-menu {
     width: 100%;
-    background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    background-color: #1a1a1a;
+
     padding: 2rem;
 
     position: absolute;
-    z-index: 3;
+    z-index: 4;
 
     font-weight: 400;
     font-size: 1.2rem;
@@ -53,7 +60,36 @@ nav {
 
 .navbar-actions {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+}
+
+.journey-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    background: none;
+    border: none;
+
+    color: #f5f5f5;
+    font-family: inherit;
+
+    font-size: 0.9rem;
+    letter-spacing: 0.08rem;
+
+    cursor: pointer;
+
+}
+
+.journey-counter {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.45rem;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+}
+
+.journey-counter-hidden {
+    display: none;
 }
 
 .menu-icon {
@@ -87,10 +123,76 @@ body {
 
 }
 
+/*JOURNEY PANEL*/
+.journey-panel {
+    position: fixed;
+    right: 0;
+    top: 76px;
+    width: 400px;
+    height: calc(100vh - 76px);
+    background-color: #1a1a1a;
+    z-index: 3;
+    transition: all 600ms ease;
+
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-panel-hidden {
+    transform: translateX(100%);
+}
+
+.journey-panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.journey-panel__title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.journey-panel__close {
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    opacity: 0.6;
+    transition: all 400ms ease;
+}
+
+.journey-panel__close:hover {
+    opacity: 1;
+}
+
+.journey-panel__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.journey-panel__empty {
+    text-align: center;
+}
+
+.journey-panel__content-hidden {
+    display: none;
+}
+
+
 /*INDEX'S HERO*/
 
 .hero {
-    min-height: calc(100vh - 74px);
+    min-height: 100vh;
     background-color: #1a1a1a;
     display: flex;
     flex-direction: column;
