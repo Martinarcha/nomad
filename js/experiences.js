@@ -122,7 +122,7 @@ function renderJourney() {
     const removeButtons = document.querySelectorAll(".journey-item__remove");
 
     removeButtons.forEach(button => {
-        button.addEventListener("click", () => {
+        button.addEventListener("click", (event) => {
             event.stopPropagation();
             const idToRemove = Number(button.dataset.id);
             journey = journey.filter(experience => {
