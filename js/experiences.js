@@ -79,14 +79,71 @@ function updateJourneyPanel() {
     } else {
         journeyEmpty.classList.add("journey-panel__content-hidden");
         journeyList.classList.remove("journey-panel__content-hidden");
+        renderJourney()
     }
 }
 updateJourneyPanel()
 
 function renderJourney() {
     journeyList.innerHTML = "";
+
+    journey.forEach(experience => {
+        journeyList.innerHTML +=
+            `
+    <div class="journey-item">
+
+        <div class="journey-item__image">
+            <img src="${experience.image}" alt="${experience.alt}">
+        </div>
+
+        <div class="journey-item__content">
+            <p class="journey-item__location">
+                ${experience.location}
+            </p>
+
+            <h4 class="journey-item__title">
+                ${experience.title}
+            </h4>
+
+            <button class="journey-item__remove"
+            data-id="${experience.id}">
+                Remove
+            </button>
+        </div>
+
+
+
+
+
+    </div>
+    `
+    });
+
+    const removeButtons = document.querySelectorAll(".journey-item__remove");
+
+    removeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            event.stopPropagation();
+            const idToRemove = Number(button.dataset.id);
+            journey = journey.filter(experience => {
+                return experience.id !== idToRemove;
+            });
+            updateJourneyCounter();
+            console.log("remove");
+            updateJourneyPanel();
+            localStorage.setItem(
+                "journey",
+                JSON.stringify(journey)
+            );
+        });
+    });
+
 }
 renderJourney()
+
+
+
+
 
 const experiencesPage = document.querySelector(".experience-category");
 
