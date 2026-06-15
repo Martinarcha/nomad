@@ -144,6 +144,146 @@ renderJourney()
 
 
 
+const generateJourneyButton = document.querySelector(".generate-journey-button");
+
+const journeyPlannerResult = document.querySelector(".journey-planner-result");
+
+const categorySelect = document.querySelector("#category");
+
+const durationSelect = document.querySelector("#duration");
+
+const difficultySelect = document.querySelector("#difficulty");
+
+const budgetSelect = document.querySelector("#budget");
+
+const journeyPlanner = document.querySelector(".journey-planner");
+
+
+if (journeyPlanner) {
+
+    generateJourneyButton.addEventListener("click", () => {
+        const selectedCategory = categorySelect.value;
+        const selectedDuration = (durationSelect.value.replace(" Days", "")).split("–");
+        const minDuration = Number(selectedDuration[0]);
+        const maxDuration = Number(selectedDuration[1]);
+        const selectedDifficulty = difficultySelect.value;
+        const selectedBudget = budgetSelect.value;
+        const journeyPlannerResult = document.querySelector(".journey-planner-result");
+
+        fetch("./data/experiences.json")
+            .then(response => response.json())
+            .then(experiences => {
+
+                const filteredExperiences = experiences.filter(experience => {
+                    let matchesBudget = false;
+                    if (selectedBudget === "Under $2000") {
+                        matchesBudget = experience.price < 2000;
+                    } else if (selectedBudget === "$2000 - $4000") {
+                        matchesBudget = experience.price >= 2000 && experience.price <= 4000;
+                    } else if (selectedBudget === "Over $4000") {
+                        matchesBudget = experience.price > 4000;
+                    }
+
+                    return experience.category === selectedCategory.toLowerCase()
+                        && experience.duration >= minDuration
+                        && experience.duration <= maxDuration
+                        && experience.difficulty === selectedDifficulty
+                        && matchesBudget;
+                });
+
+                console.log(filteredExperiences);
+
+                if (filteredExperiences.length === 0) {
+                    journeyPlannerResult.innerHTML = "";
+                    journeyPlannerResult.innerHTML =
+                        `<p>No matching experiences found. Try adjusting your filters.</p>`;
+                } else {
+                    const recommendedExperience =
+                        filteredExperiences[0];
+
+                    console.log(recommendedExperience);
+
+                    journeyPlannerResult.innerHTML = "";
+                    journeyPlannerResult.innerHTML = `
+                        <h3 class="journey-planner-result__title">
+                            RECOMMENDED JOURNEY
+                        </h3>
+
+                        <img
+                            src="${recommendedExperience.image}"
+                            alt="${recommendedExperience.alt}"
+                            class="journey-planner-result__image"
+                        >
+
+                        <h4 class="journey-planner-result__experience-title">
+                            ${recommendedExperience.title}
+                        </h4>
+
+                        <p class="journey-planner-result__location">
+                            ${recommendedExperience.location}
+                        </p>
+
+                        <p class="journey-planner-result__meta">
+                            ${recommendedExperience.duration} Days · ${recommendedExperience.difficulty}
+                        </p>
+
+                        <p class="journey-planner-result__price">
+                            $${recommendedExperience.price}
+                        </p>
+
+                        <p class="journey-planner-result__description">
+                            ${recommendedExperience.description}
+                        </p>
+
+                        <button
+                            class="journey-planner-result__button"
+                            data-id="${recommendedExperience.id}">
+                            Add to Journey
+                        </button>
+                    `
+                    const plannerAddButton = document.querySelector(
+                        ".journey-planner-result__button"
+                    );
+
+                    plannerAddButton.addEventListener("click", () => {
+
+                        const exist = journey.some(experience => {
+                            return experience.id === recommendedExperience.id;
+                        });
+
+                        console.log("exist:", exist);
+                        console.log("journey:", journey);
+
+                        if (exist) {
+
+                            showErrorMessage(
+                                "Experience already added to the journey."
+                            );
+
+                        } else {
+
+                            journey.push(recommendedExperience);
+
+                            updateJourneyCounter();
+
+                            updateJourneyPanel();
+
+                            localStorage.setItem(
+                                "journey",
+                                JSON.stringify(journey)
+                            );
+
+                            showSuccessMessage(
+                                `${recommendedExperience.title} added`
+                            );
+                        }
+
+                    });
+                }
+            });
+    });
+}
+
 
 const experiencesPage = document.querySelector(".experience-category");
 
@@ -151,6 +291,8 @@ if (experiencesPage) {
     fetch("./data/experiences.json")
         .then(response => response.json())
         .then(experiences => {
+
+            console.log("fetch ejecutado");
 
             const addToJourneyButton = document.querySelector(".add-to-journey-button");
 
@@ -305,10 +447,5 @@ if (experiencesPage) {
 
 
 
-
-
-
-        }
-
-        )
+        });
 };

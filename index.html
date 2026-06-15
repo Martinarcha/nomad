@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOMAD</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +15,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
+
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -91,10 +95,12 @@
                     <p>Curated journeys for modern explorers.</p>
                 </div>
 
-                <button class="hero-cta">
-                    <span class="cta-text">DISCOVER</span>
-                    <span class="cta-arrow">></span>
-                </button>
+                <a href="experiences.html">
+                    <button class="hero-cta">
+                        <span class="cta-text">DISCOVER</span>
+                        <span class="cta-arrow">></span>
+                    </button>
+                </a>
 
             </div>
 
@@ -140,7 +146,7 @@
                     uncompromising quality.
                 </p>
 
-                <a href="#" class="philosophy-cta"> <span class="philosophy-cta-text">LEARN MORE</span>
+                <a href="experiences.html" class="philosophy-cta"> <span class="philosophy-cta-text">LEARN MORE</span>
                     <span class="philosophy-cta-arrow">→</span></a>
             </div>
 
@@ -210,6 +216,76 @@
             </div>
         </section>
 
+        <section class="journey-planner">
+            <h2 class="journey-planner__title">
+                PLAN YOUR JOURNEY
+            </h2>
+
+            <p class="journey-planner__description">
+                Find the experience that best matches your travel style and budget.
+            </p>
+
+            <form class="journey-planner__form">
+
+                <div class="journey-planner__field">
+                    <label for="category">Category</label>
+
+                    <select id="category">
+                        <option>Mountains</option>
+                        <option>Ocean</option>
+                        <option>Desert</option>
+                        <option>Forest</option>
+                    </select>
+                </div>
+
+                <div class="journey-planner__field">
+                    <label for="duration">Duration</label>
+
+                    <select id="duration">
+                        <option>2–4 Days</option>
+                        <option>5–7 Days</option>
+                        <option>8–10 Days</option>
+                    </select>
+                </div>
+
+                <div class="journey-planner__field">
+                    <label for="difficulty">Difficulty</label>
+
+                    <select id="difficulty">
+                        <option>Beginner</option>
+                        <option>Intermediate</option>
+                        <option>Advanced</option>
+                    </select>
+                </div>
+
+                <div class="journey-planner__field">
+                    <label for="budget">Budget</label>
+
+                    <select id="budget">
+                        <option>Under $2000</option>
+                        <option>$2000 - $4000</option>
+                        <option>Over $4000</option>
+                    </select>
+                </div>
+
+
+            </form>
+
+            <button class="generate-journey-button">
+                Generate Journey
+            </button>
+        </section>
+
+        <section class="journey-planner-result">
+            <h3 class="journey-planner-result__title">
+                RECOMMENDED JOURNEY
+            </h3>
+
+            <p class="journey-planner-result__empty-description">
+                Complete the planner to receive a personalized recommendation.
+            </p>
+        </section>
+
 
     </main>
 
@@ -235,6 +311,8 @@
                 <p>© NOMAD</p>
             </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script src="js/main.js"></script>
     <script src="js/experiences.js"></script>

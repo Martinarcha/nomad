@@ -17,3 +17,6 @@ document.addEventListener("click", (event) => {
         navMenu.classList.add("nav-menu-hidden");
     }
 });
+
+
+
