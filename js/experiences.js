@@ -129,7 +129,6 @@ function renderJourney() {
                 return experience.id !== idToRemove;
             });
             updateJourneyCounter();
-            console.log("remove");
             updateJourneyPanel();
             localStorage.setItem(
                 "journey",
@@ -191,8 +190,6 @@ if (journeyPlanner) {
                         && matchesBudget;
                 });
 
-                console.log(filteredExperiences);
-
                 if (filteredExperiences.length === 0) {
                     journeyPlannerResult.innerHTML = "";
                     journeyPlannerResult.innerHTML =
@@ -201,7 +198,6 @@ if (journeyPlanner) {
                     const recommendedExperience =
                         filteredExperiences[0];
 
-                    console.log(recommendedExperience);
 
                     journeyPlannerResult.innerHTML = "";
                     journeyPlannerResult.innerHTML = `
@@ -251,9 +247,6 @@ if (journeyPlanner) {
                             return experience.id === recommendedExperience.id;
                         });
 
-                        console.log("exist:", exist);
-                        console.log("journey:", journey);
-
                         if (exist) {
 
                             showErrorMessage(
@@ -291,8 +284,6 @@ if (experiencesPage) {
     fetch("./data/experiences.json")
         .then(response => response.json())
         .then(experiences => {
-
-            console.log("fetch ejecutado");
 
             const addToJourneyButton = document.querySelector(".add-to-journey-button");
 
@@ -380,6 +371,7 @@ if (experiencesPage) {
                     });
                     currentExperience = actualExperience;
                     modal.classList.remove("modal-hidden");
+                    document.body.style.overflow = "hidden";
 
 
 
@@ -410,6 +402,7 @@ if (experiencesPage) {
                 });
             });
 
+
             addToJourneyButton.addEventListener("click", () => {
                 const exist = journey.some(experience => experience.id === currentExperience.id);
                 if (exist) {
@@ -427,21 +420,27 @@ if (experiencesPage) {
             const modal = document.querySelector(".experience-modal");
             const modalContent = document.querySelector(".experience-modal__content");
 
+            function closeModal() {
+                modal.classList.add("modal-hidden");
+                document.body.style.overflow = "auto";
+            }
+
+
             modal.addEventListener("click", (event) => {
                 if (event.target === modal) {
-                    modal.classList.add("modal-hidden");
+                    closeModal()
                 }
             });
 
             const closeButton = document.querySelector(".modal-close-button");
 
             closeButton.addEventListener("click", () => {
-                modal.classList.add("modal-hidden");
+                closeModal()
             });
 
             document.addEventListener("keydown", (event) => {
                 if (event.key === "Escape") {
-                    modal.classList.add("modal-hidden");
+                    closeModal()
                 }
             });
 
