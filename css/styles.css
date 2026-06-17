@@ -58,6 +58,13 @@ nav {
     font-weight: 400;
     font-size: 1.2rem;
 
+
+    transform: translateY(0);
+    opacity: 1;
+
+    transition:
+        transform 400ms ease,
+        opacity 300ms ease;
 }
 
 .nav-menu a {
@@ -72,41 +79,44 @@ nav {
 }
 
 .nav-menu-hidden {
-    display: none;
+    transform: translateY(-40px);
+    opacity: 0;
+
+    pointer-events: none;
 }
 
 .navbar-actions {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .journey-button {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
+    gap: 0.5rem;
 
     background: none;
     border: none;
 
+    background-color: rgba(255, 255, 255, 0.07);
+
     color: #f5f5f5;
     font-family: inherit;
 
-    font-size: 1rem;
+    font-size: 0.8rem;
     letter-spacing: 0.1rem;
     font-weight: 500;
 
     cursor: pointer;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 18px;
+    border-radius: 24px;
 
-    padding: 0.5rem;
+    padding: 0.3rem 1rem;
 }
 
 .journey-counter {
     font-size: 0.75rem;
-    padding: 0.15rem 0.45rem;
+    padding: 0.1rem 0.35rem;
     border: 2px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
 }
@@ -284,7 +294,7 @@ body {
     opacity: 0.6;
     transition: opacity 300ms ease-out;
 
-    margin-top: 1rem;
+    margin-top: 1.2rem;
 }
 
 .journey-item__remove:hover {
@@ -698,11 +708,24 @@ body {
     flex-direction: column;
 }
 
+.journey-planner__description {
+    max-width: 500px;
+
+    margin: 0 auto 2rem;
+
+    font-size: 1.1rem;
+    line-height: 1.7;
+
+    opacity: 0.75;
+    text-align: center;
+}
+
 .journey-planner__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .journey-planner__field {
@@ -740,20 +763,26 @@ body {
 
 .generate-journey-button {
     font-family: inherit;
-    margin: 2rem auto 0;
-    width: 70%;
     border: none;
-    background: none;
+
     background-color: #2a2a2a;
     color: #f5f5f5;
+
     height: 3rem;
+    padding: 0 2rem;
+
     cursor: pointer;
+
     font-size: 1.1rem;
     font-weight: 400;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
+
     border-radius: 20px;
+
     transition: background-color 200ms ease-out;
+
+    min-width: 220px;
 }
 
 .generate-journey-button:hover {
@@ -785,18 +814,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-
-.journey-planner__description {
-    max-width: 500px;
-
-    margin: 0 auto 2rem;
-
-    font-size: 1.1rem;
-    line-height: 1.7;
-
-    opacity: 0.75;
-    text-align: center;
-}
 
 .journey-planner-result__image {
     width: 100%;
@@ -960,6 +977,7 @@ footer {
 /*-----------------------------EXPERIENCES PAGE-----------------------------*/
 
 .experiences-intro {
+    margin-top: 76px;
     height: 60vh;
     padding: 4rem;
 }
@@ -979,8 +997,8 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-left: 10rem;
-    margin-top: 10rem;
+    margin-left: 5rem;
+    margin-top: 5rem;
 }
 
 .experiences-intro__title {
@@ -1152,7 +1170,8 @@ footer {
 .modal-close-button {
     position: absolute;
     top: 5rem;
-    right: 18rem;
+    right: 1rem;
+    z-index: 10;
 
     background: none;
     border: none;
@@ -1183,6 +1202,8 @@ footer {
     grid-template-columns: 6fr 4fr;
     height: 70vh;
     z-index: 3;
+    position: relative;
+
 
 }
 
@@ -1326,6 +1347,25 @@ footer {
 
 @media (max-width: 900px) {
 
+
+    .navbar-actions {
+        gap: 1.5rem;
+    }
+
+    .journey-button {
+        gap: 0.3rem;
+
+        font-size: 0.75rem;
+        font-weight: 500;
+
+        padding: 0.15rem 0.6rem;
+    }
+
+    .journey-counter {
+        font-size: 0.7rem;
+        border: 1.5px solid rgba(255, 255, 255, 0.15);
+    }
+
     /*HERO SECTION*/
     .hero-text h2 {
         font-size: 2.5rem;
@@ -1343,6 +1383,57 @@ footer {
     .cta-arrow {
         font-size: 1.2rem;
     }
+
+    /*JOURNEY PANEL*/
+    .journey-panel {
+        width: 100%;
+        height: calc(100vh - 76px);
+        padding: 2rem;
+    }
+
+    .journey-panel__close {
+        font-family: inherit;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        font-weight: 400;
+    }
+
+    .journey-panel__list {
+        height: 100%;
+    }
+
+    .journey-item {
+        gap: 1rem;
+    }
+
+    .journey-item__image {
+        width: 90px;
+        height: 90px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .journey-item__location {
+        font-size: 0.7rem;
+        letter-spacing: 0.05rem;
+        margin-bottom: 0.2rem;
+    }
+
+
+    .journey-item__title {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .journey-item__remove {
+
+        font-size: 0.8rem;
+        font-weight: 300;
+
+        opacity: 0.8;
+        margin-top: 1.2rem;
+    }
+
 
     /*CARDS SECTION*/
     .experiences-grid {
@@ -1419,6 +1510,109 @@ footer {
         width: 100%;
     }
 
+
+    /* JOURNEY PLANNER SECTION */
+
+    .journey-planner__form {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-planner {
+        max-width: 80vw;
+        margin: 0 auto 2rem;
+        padding: 3rem 2rem;
+
+        border-radius: 24px;
+    }
+
+    .journey-planner__title,
+    .journey-planner-result__title {
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+        font-weight: 500;
+    }
+
+    .journey-planner__description,
+    .journey-planner-result__description {
+        margin: 0 auto 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .journey-planner__field {
+        padding: 1rem 2.5rem;
+        gap: 0.5rem;
+    }
+
+    .journey-planner__field label {
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    .journey-planner__field select {
+        height: 2rem;
+        color: #f5f5f5;
+        border-bottom: solid 0.5px rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+
+    .generate-journey-button,
+    .journey-planner-result__button {
+        height: 3rem;
+        padding: 0 2rem;
+
+        font-size: 0.9rem;
+        font-weight: 500;
+
+        border-radius: 16px;
+
+        transition: background-color 200ms ease-out;
+
+        min-width: 220px;
+    }
+
+
+    .journey-planner-result {
+        max-width: 80vw;
+        margin: 0 auto 4rem;
+        padding: 3rem 2rem;
+        border-radius: 24px;
+    }
+
+    .journey-planner-result__image {
+        width: 100%;
+        height: 250px;
+
+        margin: 2rem auto;
+        border-radius: 16px;
+    }
+
+    .journey-planner-result__experience-title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .journey-planner-result__location {
+        letter-spacing: 0.25rem;
+        font-size: 0.7rem;
+    }
+
+    .journey-planner-result__meta {
+        padding: 0.50rem 1rem;
+
+        font-size: 0.7rem;
+        letter-spacing: 0.08rem;
+
+        margin-bottom: 2rem;
+    }
+
+
+
     /* EXPERIENCES */
 
     .experiences-intro {
@@ -1443,7 +1637,6 @@ footer {
 
     .category-hero {
         height: 60vh;
-        position: relative;
     }
 
     .category-hero__title {
@@ -1457,7 +1650,7 @@ footer {
     }
 
     .category-intro__text {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .category-showcase {
@@ -1488,6 +1681,51 @@ footer {
     .secondary-experience__title {
         font-size: 1.2rem;
         font-weight: 400;
+    }
+
+
+    /* EXPERIENCES MODAL */
+
+    .experience-modal__content {
+        margin-top: 4.5rem;
+        width: 85vw;
+        height: auto;
+        max-height: 85vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10rem 1fr;
+
+        overflow-y: auto;
+    }
+
+    .modal-details {
+        padding: 2rem;
+    }
+
+    .modal-info__title {
+        font-size: 2rem;
+    }
+
+    .modal-info {
+        gap: 1.5rem;
+    }
+
+    .modal-meta {
+        flex-wrap: wrap;
+    }
+
+    .add-to-journey-button {
+        margin-left: -2rem;
+        margin-right: -2rem;
+
+        padding: 1.5rem 2rem;
+
+        margin-top: 0;
+        margin-bottom: -2rem;
+    }
+
+    .modal-close-button {
+
+        z-index: 4;
     }
 
 
